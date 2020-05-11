@@ -50,6 +50,7 @@ class PaymentGateway:
             card_type = "american express"
         else:
             card_type = None
+
         # Let's obtain return value
         if transaction_type == "auth":
             return_value = 1
@@ -59,6 +60,7 @@ class PaymentGateway:
             return_value = 3
         else:
             return_value = None
+            
         return {
             "card_type": card_type,
             "transation_value": return_value
