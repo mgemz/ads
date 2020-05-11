@@ -51,6 +51,7 @@ class PaymentGateway:
         else:
             card_type = None
 
+
         # Let's obtain return value
         if transaction_type == "auth":
             return_value = 1
