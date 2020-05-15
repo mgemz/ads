@@ -2,7 +2,9 @@ from payment_gateway import PaymentGateway
 
 if __name__ == '__main__':
     transaction_type = input("Tipo de transaccion: ")
+
     transaction_amount = float(input("Monto de transaccion: "))
+
     credit_card = input("Tarjeta a utilizar: ")
 
     pg = PaymentGateway()

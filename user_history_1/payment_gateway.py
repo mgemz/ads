@@ -25,10 +25,10 @@ class PaymentGateway:
     def do_sale(self, amount, transaction_type, credit_card):
 
         # First, let me validate your information
-        is_valid_transaction_type = self.is_transaction_type_valid(transaction_type)
+        is_not_valid_transaction_type = self.is_transaction_type_valid(transaction_type)
 
-        if is_valid_transaction_type:
-            return is_valid_transaction_type
+        if is_not_valid_transaction_type:
+            return is_not_valid_transaction_type
 
         is_valid_amount = self.is_transaction_amount_valid(amount)
 
@@ -39,9 +39,9 @@ class PaymentGateway:
 
         if is_valid_credit_card:
             return is_valid_credit_card
+        credit_card = "4111111111111111"
 
         # Let's obtain card type:
-
         if credit_card[0] == "4":
             card_type = "visa"
         elif credit_card[0] == "5":
@@ -50,7 +50,6 @@ class PaymentGateway:
             card_type = "american express"
         else:
             card_type = None
-
 
         # Let's obtain return value
         if transaction_type == "auth":
